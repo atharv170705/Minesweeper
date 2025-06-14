@@ -95,3 +95,45 @@ h2 {
 .x8 {
     color: #7c77ff;
 }
+
+@media screen and (max-width: 600px) {
+    #board {
+        width: 300px;
+        height: 300px;
+        border-width: 6px;
+    }
+
+    .cell {
+        width: 37.5px; /* 300 / 8 columns (assumption) */
+        height: 37.5px;
+        font-size: 20px;
+    }
+
+    #status {
+        width: 150px;
+        font-size: 18px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+}
+@media screen and (max-width: 1023px) {
+    #flag-toggle {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 200px;
+        border: 2px outset #1E262E;
+        background: #394048;
+        color: white;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #flag-toggle {
+        display: none;
+    }
+}

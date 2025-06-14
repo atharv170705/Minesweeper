@@ -9,12 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const gameBoard = document.getElementById("board");
     const minesCountDisplay = document.getElementById("mines-count");
     const gameStatus = document.getElementById("status");
+    const flagBtn = document.getElementById("flag-toggle");
 
     initializeBoard();
     placeMines();
     countNeighbours();
     renderBoard();
 
+    flagBtn.addEventListener("click", () => {
+        flagEnabeled = !flagEnabeled;
+        flagBtn.textContent = `Flag Mode: ${flagEnabeled ? "ON" : "OFF"}`;
+    });
 
     function initializeBoard() {
         for(let i = 0; i < rows; i++) {
