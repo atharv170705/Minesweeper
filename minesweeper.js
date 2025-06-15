@@ -118,15 +118,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if(i < 0 || i >= rows || j < 0 || j >= cols) {
             return;
         }
-        if(board[i][j].isRevealed || board[i][j].isFlagged) {
-            return ;
+        if(board[i][j].isRevealed) {
+            return;
         }
 
         if(flagEnabeled) {
             board[i][j].isFlagged = !board[i][j].isFlagged;
             renderBoard();
+            checkWin();
             return;
         }
+        if(board[i][j].isFlagged) {
+            return;
+        }
+
         board[i][j].isRevealed = true;
 
         if(board[i][j].isMine) {
